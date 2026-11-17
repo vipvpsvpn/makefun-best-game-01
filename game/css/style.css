@@ -1,0 +1,47 @@
+/* Emberkeep page shell: a dark stage that centres the canvas and keeps it
+   readable on any desktop window. The game itself draws everything. */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #05070f;
+  overflow: hidden;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background:
+    radial-gradient(1200px 700px at 50% 30%, #101a38 0%, #05070f 70%);
+}
+
+#game {
+  display: block;
+  width: min(1280px, 96vw, calc((100vh - 64px) * 16 / 9));
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba(255, 190, 90, 0.18),
+    0 0 60px rgba(255, 150, 40, 0.12),
+    0 24px 80px rgba(0, 0, 0, 0.8);
+  background: #0b1026;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+#hint {
+  color: #8d94b8;
+  font-family: ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
